@@ -212,20 +212,37 @@ export const profile: Profile = {
         en: "Personal project · Precision agriculture",
       },
       description: {
-        es: "Sistema que estima el porcentaje y el peso promedio de paltas por categoría en campo (primera, segunda y descarte) a partir del porcentaje de materia seca y los índices de crecimiento de biomasa del fruto, para recomendar el momento óptimo de cosecha.",
-        en: "System that estimates the percentage and average weight of avocados per field category (first, second, and discard) from dry matter percentage and fruit biomass growth indices, in order to recommend the optimal harvest date.",
+        es: "Sistema de visión por computadora que estima en campo la distribución de calibres de un lote de palta Hass. Recorriendo la hilera en video, detecta y sigue cada fruto para contarlo una sola vez, lo clasifica en las tres categorías comerciales de la NTP 011.018 (Primera ≥180 g, Segunda 120–180 g, Tercera <120 g) y devuelve el reparto porcentual del lote y la recomendación de cosechar o esperar.",
+        en: "Computer vision system that estimates the size distribution of a Hass avocado lot directly in the field. Walking the row on video, it detects and tracks each fruit so it is counted only once, classifies it into the three commercial categories of Peru's NTP 011.018 standard (First ≥180 g, Second 120–180 g, Third <120 g), and returns the lot's percentage breakdown along with a harvest-or-wait recommendation.",
       },
       outcomes: [
         {
-          es: "Recomienda el momento óptimo de cosecha",
-          en: "Recommends the optimal harvest moment",
+          es: "Cuenta cada fruto una sola vez gracias al seguimiento multiobjeto en video",
+          en: "Counts each fruit only once thanks to multi-object video tracking",
         },
         {
-          es: "Clasifica el fruto por categoría comercial",
-          en: "Classifies fruit by commercial category",
+          es: "Clasifica el calibre en las tres categorías comerciales de la NTP 011.018",
+          en: "Classifies fruit size into the three commercial categories of the NTP 011.018 standard",
+        },
+        {
+          es: "Devuelve el reparto porcentual del lote y la recomendación de cosechar o esperar",
+          en: "Returns the lot's percentage breakdown and a harvest-or-wait recommendation",
+        },
+        {
+          es: "El calibre se infiere del tamaño aparente a distancia de captura controlada, por lo que la resolución de inferencia funciona como parámetro de calibración, no como ajuste de rendimiento",
+          en: "Fruit size is inferred from apparent size at a controlled capture distance, so inference resolution acts as a calibration parameter, not a performance setting",
         },
       ],
-      technologies: ["Python", "Análisis de datos", "Google Colab"],
+      technologies: [
+        "YOLOv11",
+        "BoT-SORT",
+        "Python",
+        "FastAPI",
+        "React",
+        "Firestore",
+        "Railway",
+        "Netlify",
+      ],
     },
     {
       id: "kow-website",
