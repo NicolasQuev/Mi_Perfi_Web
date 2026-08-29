@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { profile } from "@/content/profile";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { DEFAULT_LOCALE } from "@/i18n/locale";
@@ -7,8 +8,8 @@ import { AuroraBackdrop } from "@/shared/components/AuroraBackdrop";
 import { siteUrl } from "@/shared/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = GeistSans;
+const geistMono = GeistMono;
 
 const pageTitle = `${profile.fullName} · ${profile.rotatingRoles[0][DEFAULT_LOCALE]}`;
 const pageDescription = profile.summary[DEFAULT_LOCALE];
